@@ -1,0 +1,10 @@
+Improvements to FutureMe:
+
+With OpenId you should not have to log in - you supply your openID email and let OpenId do all the verification.
+
+you do not supply a date - it is just 6 months from now.
+
+No public or private - just private.
+
+you can view past emails but only after they have been sent - no editing or any rubbish like that.
+
