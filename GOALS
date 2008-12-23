@@ -8,3 +8,20 @@ No public or private - just private.
 
 you can view past emails but only after they have been sent - no editing or any rubbish like that.
 
+
+
+Got a hello world sinatra app up and running with rspec.
+
+Next logical steps
+
+
+Get activerecord working with sinatra
+have a users model
+find out if there is any kind of migrations - is this part of active record?
+
+Look at the rails open id auth plugin
+Extract it and use in sinatra
+
+
+
+Put a form on the index page

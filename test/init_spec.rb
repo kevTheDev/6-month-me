@@ -12,10 +12,11 @@ describe 'My app' do
   it 'should show a default page' do
     get_it '/'
     @response.should be_ok
-    @response.body.should == 'Hello world'
+    @response.body.should include("Hi there")
   end
   
   it "should render index template" do
+    pending
     get_it '/index'
     @response.should be_ok
     #@response.should render('index')

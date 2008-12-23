@@ -1,0 +1,23 @@
+development:
+  adapter: mysql
+  database: six_months_development
+  username: root
+  password: 
+
+production:
+  adapter: mysql
+  database: six_months__production
+  username: inuda
+  password: inov
+
+test:
+  adapter: mysql
+  database: six_months__test
+  username: root
+  password:
+
+staging:
+  adapter: mysql
+  database: six_months__staging
+  username: inuda
+  password: inov
