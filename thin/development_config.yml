@@ -4,8 +4,8 @@
   address: 127.0.0.1
   port: 4567
   pid: /Users/kev/apps/personal/6-month-me/tmp/thin.pid
-  rackup: /Users/kevapps/personal//6-month-me/thin/config.ru
-  log: /Users/kevapps/personal//6-month-me/log/thin.log
+  rackup: /Users/kevapps/personal/6-month-me/thin/config.ru
+  log: /Users/kev/apps/personal/6-month-me/log/thin.log
   max_conns: 1024
   timeout: 30
   max_persistent_conns: 512
