@@ -1,4 +1,4 @@
-task :default do
+task :default => :environment do
   # just run tests, nothing fancy
   Dir["test/**/*.rb"].sort.each { |test|  load test }
 end

@@ -17,10 +17,9 @@ Next logical steps
 
 Get activerecord working with sinatra DONE
 
-Need to work out best way to create migrations
-create user table migrations
+Need to work out best way to create migrations (Manually for now - write a rake task later)
+create user table migrations DONE
 have a users model DONE
-
 
 
 Look at the rails open id auth plugin
