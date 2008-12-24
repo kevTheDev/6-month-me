@@ -15,12 +15,20 @@ Got a hello world sinatra app up and running with rspec.
 Next logical steps
 
 
-Get activerecord working with sinatra
-have a users model
-find out if there is any kind of migrations - is this part of active record?
+Get activerecord working with sinatra DONE
+
+Need to work out best way to create migrations
+create user table migrations
+have a users model DONE
+
+
 
 Look at the rails open id auth plugin
 Extract it and use in sinatra
+
+create open id models and migrations
+
+sessions controller? Do we really need to implement the MVC architecture in Sinatra?
 
 
 

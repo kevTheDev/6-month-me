@@ -20,8 +20,8 @@ end
 # 
 # ActiveRecord::Base.establish_connection(use_main_database)
 
-configure  do
-  ActiveRecord::Base.configurations = database_configuration
-  ActiveRecord::Base.establish_connection(APP_ENV)
-  ActiveRecord::Base.logger = Logger.new("activerecord.log") # Somehow you need logging right?
-end
+# configure  do
+#   ActiveRecord::Base.configurations = database_configuration
+#   ActiveRecord::Base.establish_connection(APP_ENV)
+#   ActiveRecord::Base.logger = Logger.new("activerecord.log") # Somehow you need logging right?
+# end
