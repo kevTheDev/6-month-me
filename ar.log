@@ -449,3 +449,7 @@ PARAMS: --- {}
   [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
   [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`updated_at`, `email`, `created_at`) VALUES('2008-12-26 17:50:44', 'kev.j.edwards@gmail.com', '2008-12-26 17:50:44')[0m
   [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mEmail Columns (34.5ms)[0m   [0mSHOW FIELDS FROM `emails`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEmail Create (0.3ms)[0m   [0mINSERT INTO `emails` (`updated_at`, `content`, `user_id`, `created_at`) VALUES('2008-12-26 17:51:30', 'haha', NULL, '2008-12-26 17:51:30')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCOMMIT[0m

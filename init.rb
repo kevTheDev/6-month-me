@@ -18,6 +18,7 @@ require File.expand_path(File.dirname(__FILE__) + '/config/environment')
 require 'lib/active_record_store/active_record_store'
 require 'openid/extensions/sreg'
 require 'lib/models/user'
+require 'lib/models/email'
 
 include ActiveRecord
 
@@ -79,7 +80,7 @@ get '/authentication_complete' do
   haml :new_email
 end
 
-post '/new_email' do
+get '/new_email' do
   
   email = Email.new(:content => params[:email_content])
   email.save
