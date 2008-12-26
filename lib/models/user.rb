@@ -8,6 +8,8 @@ include ActAsSimpleRegistration
 
 class User < ActiveRecord::Base
   
+  has_many :emails
+  
   acts_as_simple_registration do
     #required :email
     #optional :nickname => :name

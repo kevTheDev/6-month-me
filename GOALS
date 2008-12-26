@@ -27,12 +27,12 @@ sinatra needs to provide a session dict per user-agent - does it? DONE
 Put a form on the index page DONE
 
 
-request email information from user
-store email in user model
+request email information from user # DONE
+store email in user model # DONE
 
 store info in user model so that we can sign in again
 
-create email model
+create email model # DONE
 create email form
 store email
 
