@@ -9,35 +9,11 @@ No public or private - just private.
 you can view past emails but only after they have been sent - no editing or any rubbish like that.
 
 
-
-Got a hello world sinatra app up and running with rspec.
-
 Next logical steps
 
-
-Get activerecord working with sinatra DONE
-
-Need to work out best way to create migrations (Manually for now - write a rake task later)
-create user table migrations DONE
-have a users model DONE
-
-
-create open id models and migrations - this is implementation of an OpenId Store (DONE?)
-sinatra needs to provide a session dict per user-agent - does it? DONE
-Put a form on the index page DONE
-
-
-request email information from user # DONE
-store email in user model # DONE
-
-store info in user model so that we can sign in again
-
-create email model # DONE
-create email form # DONE
-store email # DONE
-
-associate open id with user
+store info in user model so that we can sign in again - hacky version - store user id in session, and do user find each time requested
 after open id log in - make user currently logged in user
+write some kind of before filter - apply to all relevant actions so we make sure that the user is logged in
 
 associate email with user
 
@@ -50,7 +26,7 @@ work out the date six months from now
 
 
 
-
+allow the user to create the email before signing in
 
 replace activerecord with datamapper or sequel?
 

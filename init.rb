@@ -49,8 +49,6 @@ get '/submit_open_id' do
   check_id_request.add_extension(sregreq)
   
   redirect(check_id_request.redirect_url("http://localhost:4567", "http://localhost:4567/authentication_complete"))
-
-
 end
 
 # end open id authentication
