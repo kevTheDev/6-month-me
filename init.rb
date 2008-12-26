@@ -59,23 +59,24 @@ get '/authentication_complete' do
   
   oidresp = open_id_consumer.complete(session, "/authentication_complete")
 
-    logger = Logger.new("kev.log")
-    
-    
-    identity_url = params["openid.identity"]
-    
-    user = User.find_or_create_by_identity_url(identity_url)
-    
-    user.email = params["openid.sreg.email"]
-    user.save
-
+  logger = Logger.new("kev.log")
   
+  
+  identity_url = params["openid.identity"]
+  
+  user = User.find_or_create_by_identity_url(identity_url)
+  
+  user.email = params["openid.sreg.email"]
+  user.save
+  
+  session[:current_user] = user.id
   haml :new_email
 end
 
 get '/new_email' do
   
   email = Email.new(:content => params[:email_content])
+  email.user_id = session[:current_user]
   email.save
   
   
