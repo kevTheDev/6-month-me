@@ -22,18 +22,28 @@ create user table migrations DONE
 have a users model DONE
 
 
-create open id models and migrations - this is implementation of an OpenId Store
-sinatra needs to provide a session dict per user-agent - does it?
+create open id models and migrations - this is implementation of an OpenId Store (DONE?)
+sinatra needs to provide a session dict per user-agent - does it? DONE
+Put a form on the index page DONE
+
+
+request email information from user
+store email in user model
+
+store info in user model so that we can sign in again
+
+create email model
+create email form
+store email
+
+send email to user
+
+
+work out the date six months from now
 
 
 
-
-
-sessions controller? Do we really need to implement the MVC architecture in Sinatra?
-
-
-
-Put a form on the index page
 
 
 replace activerecord with datamapper or sequel?
+
