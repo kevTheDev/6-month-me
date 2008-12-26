@@ -1,0 +1,95 @@
+# Logfile created on Fri Dec 26 17:35:00 +0000 2008 by /
+PARAMS: --- {}
+
+
+PARAMS: --- {}
+
+
+PARAMS: --- 
+OpenID::Consumer::last_requested_endpoint: &id001 !ruby/object:OpenID::OpenIDServiceEndpoint 
+  canonical_id: 
+  claimed_id: http://kevthedev.myopenid.com/
+  display_identifier: 
+  local_id: http://kevthedev.myopenid.com/
+  server_url: http://www.myopenid.com/server
+  type_uris: 
+  - http://specs.openid.net/auth/2.0/signon
+  - http://openid.net/sreg/1.0
+  - http://openid.net/extensions/sreg/1.1
+  - http://schemas.openid.net/pape/policies/2007/06/phishing-resistant
+  - http://openid.net/srv/ax/1.0
+  used_yadis: true
+"OpenID::Consumer::DiscoveredServices::OpenID::Consumer::": !ruby/object:OpenID::Consumer::DiscoveredServices 
+  current: *id001
+  services: 
+  - !ruby/object:OpenID::OpenIDServiceEndpoint 
+    canonical_id: 
+    claimed_id: http://kevthedev.myopenid.com/
+    display_identifier: 
+    local_id: http://kevthedev.myopenid.com/
+    server_url: http://www.myopenid.com/server
+    type_uris: 
+    - http://openid.net/signon/1.1
+    - http://openid.net/sreg/1.0
+    - http://openid.net/extensions/sreg/1.1
+    - http://schemas.openid.net/pape/policies/2007/06/phishing-resistant
+    - http://openid.net/srv/ax/1.0
+    used_yadis: true
+  - !ruby/object:OpenID::OpenIDServiceEndpoint 
+    canonical_id: 
+    claimed_id: http://kevthedev.myopenid.com/
+    display_identifier: 
+    local_id: http://kevthedev.myopenid.com/
+    server_url: http://www.myopenid.com/server
+    type_uris: 
+    - http://openid.net/signon/1.0
+    - http://openid.net/sreg/1.0
+    - http://openid.net/extensions/sreg/1.1
+    - http://schemas.openid.net/pape/policies/2007/06/phishing-resistant
+    - http://openid.net/srv/ax/1.0
+    used_yadis: true
+  starting_url: kevthedev.myopenid.com
+  yadis_url: http://kevthedev.myopenid.com/
+
+PARAMS: --- 
+OpenID::Consumer::last_requested_endpoint: &id001 !ruby/object:OpenID::OpenIDServiceEndpoint 
+  canonical_id: 
+  claimed_id: http://kevthedev.myopenid.com/
+  display_identifier: 
+  local_id: http://kevthedev.myopenid.com/
+  server_url: http://www.myopenid.com/server
+  type_uris: 
+  - http://openid.net/signon/1.1
+  - http://openid.net/sreg/1.0
+  - http://openid.net/extensions/sreg/1.1
+  - http://schemas.openid.net/pape/policies/2007/06/phishing-resistant
+  - http://openid.net/srv/ax/1.0
+  used_yadis: true
+"OpenID::Consumer::DiscoveredServices::OpenID::Consumer::": !ruby/object:OpenID::Consumer::DiscoveredServices 
+  current: *id001
+  services: 
+  - !ruby/object:OpenID::OpenIDServiceEndpoint 
+    canonical_id: 
+    claimed_id: http://kevthedev.myopenid.com/
+    display_identifier: 
+    local_id: http://kevthedev.myopenid.com/
+    server_url: http://www.myopenid.com/server
+    type_uris: 
+    - http://openid.net/signon/1.0
+    - http://openid.net/sreg/1.0
+    - http://openid.net/extensions/sreg/1.1
+    - http://schemas.openid.net/pape/policies/2007/06/phishing-resistant
+    - http://openid.net/srv/ax/1.0
+    used_yadis: true
+  starting_url: kevthedev.myopenid.com
+  yadis_url: http://kevthedev.myopenid.com/
+
+PARAMS: --- 
+open_id_input: atest
+
+PARAMS: --- 
+open_id_input: haha
+
+PARAMS: --- 
+open_id_input: kevthedev.myopenid.com
+

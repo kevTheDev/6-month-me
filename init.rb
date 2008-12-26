@@ -39,11 +39,12 @@ get '/submit_open_id' do
   open_id_store = ActiveRecordStore.new
   open_id_consumer = OpenID::Consumer.new(session, open_id_store)
   
-  
+  logger = Logger.new("kev.log")
+  logger.info "PARAMS: #{params.to_yaml}"
 
 
   
-  check_id_request = open_id_consumer.begin("kevthedev.myopenid.com")
+  check_id_request = open_id_consumer.begin(params[:open_id_input])
   
   sregreq = OpenID::SReg::Request.new
   #sregreq.request_fields User.sreg_required, true
