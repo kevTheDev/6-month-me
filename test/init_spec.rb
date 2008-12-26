@@ -4,6 +4,8 @@ require 'sinatra'
 require 'sinatra/test/rspec'
 require 'init'
 
+require 'openid'
+
 PROJECT_ROOT = File.join(File.dirname(__FILE__), "..")
 set_options :views => File.join(PROJECT_ROOT, "views")
 
@@ -21,5 +23,19 @@ describe 'My app' do
     @response.should be_ok
     #@response.should render('index')
   end
+  
+end
 
+describe "MyApp", "open id submission" do
+  
+  it "re-renders the form if user submitted a blank open id"
+  
+  it "constructs an open id Consumer" do
+    OpenID::Consumer.should_receive(:new)
+    
+    get_it '/submit_open_id', :open_id => "testopenid"
+  end
+  
+  it "redirects to an open id provider"
+  
 end
