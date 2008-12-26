@@ -39,18 +39,12 @@ get '/submit_open_id' do
   
   open_id_store = ActiveRecordStore.new
   open_id_consumer = OpenID::Consumer.new(session, open_id_store)
-  
-  logger = Logger.new("kev.log")
-  logger.info "PARAMS: #{params.to_yaml}"
-
 
   
   check_id_request = open_id_consumer.begin(params[:open_id_input])
   
   sregreq = OpenID::SReg::Request.new
-  #sregreq.request_fields User.sreg_required, true
-  #sregreq.request_fields User.sreg_optional, false
-  
+
   sregreq.request_fields(["email"], true)
   check_id_request.add_extension(sregreq)
   
@@ -66,17 +60,18 @@ get '/authentication_complete' do
   open_id_consumer = OpenID::Consumer.new(session, open_id_store)
   
   oidresp = open_id_consumer.complete(session, "/authentication_complete")
-  # ...  
- # if oidresp.status == OpenID::Consumer::SUCCESS
-    # ...  
-    user = User.new
+
+    logger = Logger.new("kev.log")
+    
+    
+    identity_url = params["openid.identity"]
+    
+    user = User.find_or_create_by_identity_url(identity_url)
+    
     user.email = params["openid.sreg.email"]
     user.save
-    #user.assign_sreg_attributes! OpenID::SReg::Response.from_success_response(oidresp)
-    # ...  
- # end
+
   
-  #haml :authentication_complete
   haml :new_email
 end
 

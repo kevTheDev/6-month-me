@@ -93,3 +93,25 @@ open_id_input: haha
 PARAMS: --- 
 open_id_input: kevthedev.myopenid.com
 
+PARAMS: --- 
+open_id_input: kevthedev.myopenid.com
+
+PARAMS: --- 
+open_id_input: kevthedev.myopenid.com
+
+PARAMS: --- 
+open_id_input: kevthedev.myopenid.com
+
+PARAMS: --- 
+openid.mode: id_res
+openid.return_to: http://localhost:4567/authentication_complete?openid1_claimed_id=http%3A%2F%2Fkevthedev.myopenid.com%2F&rp_nonce=2008-12-26T18%3A05%3A32ZCjtwtM
+openid.sig: 6g0+Rmx+XqQweT6mJwpyQ4WnYbI=
+rp_nonce: 2008-12-26T18:05:32ZCjtwtM
+openid.op_endpoint: http://www.myopenid.com/server
+openid.response_nonce: 2008-12-26T18:05:37ZptTpo5
+openid.sreg.email: kev.j.edwards@gmail.com
+openid1_claimed_id: http://kevthedev.myopenid.com/
+openid.identity: http://kevthedev.myopenid.com/
+openid.assoc_handle: "{HMAC-SHA1}{4954d635}{ud2b0g==}"
+openid.signed: assoc_handle,identity,mode,op_endpoint,response_nonce,return_to,signed,sreg.email
+

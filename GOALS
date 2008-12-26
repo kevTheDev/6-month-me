@@ -33,8 +33,13 @@ store email in user model # DONE
 store info in user model so that we can sign in again
 
 create email model # DONE
-create email form
-store email
+create email form # DONE
+store email # DONE
+
+associate open id with user
+after open id log in - make user currently logged in user
+
+associate email with user
 
 send an email to the user - it is a copy of the email that they will be sent in six months, and also serves as a preliminary test to show them that the system works - get user confidence
 
