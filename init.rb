@@ -18,6 +18,8 @@ require File.expand_path(File.dirname(__FILE__) + '/config/environment')
 
 include ActiveRecord
 
+enable :sessions
+
 
 get '/' do
   haml :index

@@ -22,13 +22,18 @@ create user table migrations DONE
 have a users model DONE
 
 
-Look at the rails open id auth plugin
-Extract it and use in sinatra
+create open id models and migrations - this is implementation of an OpenId Store
+sinatra needs to provide a session dict per user-agent - does it?
 
-create open id models and migrations
+
+
+
 
 sessions controller? Do we really need to implement the MVC architecture in Sinatra?
 
 
 
 Put a form on the index page
+
+
+replace activerecord with datamapper or sequel?
