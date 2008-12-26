@@ -314,3 +314,26 @@ Migrating to CreateOpenIdAssociations (2)
   [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
   [4;35;1mAssociation Create (0.2ms)[0m   [0mINSERT INTO `open_id_associations` (`handle`, `updated_at`, `server_url`, `lifetime`, `issued`, `assoc_type`, `secret`, `created_at`) VALUES('{HMAC-SHA1}{4954d635}{ud2b0g==}', '2008-12-26 13:03:50', 'http://www.myopenid.com/server', 1209600.0, 1230296630, 'HMAC-SHA1', 'âÐ+@K7ÿjÑ«®bçwžNÛ»Z', '2008-12-26 13:03:50')[0m
   [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAssociation Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `open_id_associations`[0m
+  [4;36;1mAssociation Load (0.4ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAssociation Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `open_id_associations`[0m
+  [4;36;1mAssociation Load (2.9ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAssociation Load (0.3ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAssociation Load (0.3ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAssociation Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `open_id_associations`[0m
+  [4;36;1mAssociation Load (0.3ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAssociation Load (0.3ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAssociation Load (0.3ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAssociation Load (0.3ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAssociation Load (0.3ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAssociation Load (0.3ms)[0m   [0;1mSELECT * FROM `open_id_associations` WHERE (`open_id_associations`.`server_url` = 'http://www.myopenid.com/server') [0m

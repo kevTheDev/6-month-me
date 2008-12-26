@@ -40,9 +40,13 @@ get '/submit_open_id' do
   
   #puts "Consumer: #{open_id_consumer.class}"
   
-  open_id_consumer.begin("kevthedev.myopenid.com")
+  check_id_request = open_id_consumer.begin("kevthedev.myopenid.com")
+  redirect(check_id_request.redirect_url("http://localhost:4567", "http://localhost:4567/authentication_complete"))
   
   #{}"hello"
 end
 
+get '/authentication_complete' do
+  "Authentication complete"
+end
 
