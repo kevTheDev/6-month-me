@@ -75,6 +75,14 @@ get '/authentication_complete' do
     # ...  
  # end
   
-  "Authentication complete: #{params.to_yaml}"
+  #haml :authentication_complete
+  haml :new_email
 end
 
+post '/new_email' do
+  
+  email = Email.new(:content => params[:email_content])
+  email.save
+  
+  
+end

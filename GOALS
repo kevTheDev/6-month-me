@@ -36,6 +36,8 @@ create email model # DONE
 create email form
 store email
 
+send an email to the user - it is a copy of the email that they will be sent in six months, and also serves as a preliminary test to show them that the system works - get user confidence
+
 send email to user
 
 

@@ -1,0 +1,13 @@
+%h1
+  Congrats, you are signed in
+  
+%p
+  Get ready to send your first email
+  
+
+%form{:action => "/new_email"}
+  %label
+    Write a letter to yourself
+  %input{:type => "text", :name => "email_content"}
+  %button{:type => "button"}
+    Submit
