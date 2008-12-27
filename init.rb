@@ -19,8 +19,15 @@ require 'lib/active_record_store/active_record_store'
 require 'openid/extensions/sreg'
 require 'lib/models/user'
 require 'lib/models/email'
+  require 'net/smtp'
+
+require 'lib/user_notifier'
+
+require 'action_mailer'
+require 'pony'
 
 include ActiveRecord
+
 
 enable :sessions
 
@@ -79,5 +86,16 @@ get '/new_email' do
   email.user_id = session[:current_user]
   email.save
   
+  current_user_id = session[:current_user].to_s
+  user = User.find(current_user_id)
+  
+
+  # send the email
+  Pony.mail(:to => user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => email.content)
+
+  
+  #UserNotifier.deliver_new_email(email)  
+  
   
 end
+

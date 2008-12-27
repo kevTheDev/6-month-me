@@ -1,0 +1,11 @@
+Template root: .
+Template root: .
+Template root: .
+Template root: ./lib
+Template root: ./lib
+Template root: ./lib
+Template root: ./lib
+Template root: ./lib/
+Passing exec:/usr/sbin/sendmail - String
+Passing exec:kev.j.edwards@gmail.com - kev.j.edwards@gmail.com
+before exec

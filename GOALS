@@ -11,12 +11,6 @@ you can view past emails but only after they have been sent - no editing or any 
 
 Next logical steps
 
-store info in user model so that we can sign in again - hacky version - store user id in session, and do user find each time requested
-after open id log in - make user currently logged in user
-write some kind of before filter - apply to all relevant actions so we make sure that the user is logged in
-
-associate email with user
-
 send an email to the user - it is a copy of the email that they will be sent in six months, and also serves as a preliminary test to show them that the system works - get user confidence
 
 send email to user
@@ -27,6 +21,12 @@ work out the date six months from now
 
 
 allow the user to create the email before signing in
+
+
+store info in user model so that we can sign in again - hacky version - store user id in session, and do user find each time requested
+write some kind of before filter - apply to all relevant actions so we make sure that the user is logged in
+
+error handling on open id submission
 
 replace activerecord with datamapper or sequel?
 
