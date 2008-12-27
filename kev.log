@@ -115,3 +115,20 @@ openid.identity: http://kevthedev.myopenid.com/
 openid.assoc_handle: "{HMAC-SHA1}{4954d635}{ud2b0g==}"
 openid.signed: assoc_handle,identity,mode,op_endpoint,response_nonce,return_to,signed,sreg.email
 
+SESSION KEYS: --- 
+- :current_user
+- OpenID::Consumer::last_requested_endpoint
+- "OpenID::Consumer::DiscoveredServices::OpenID::Consumer::"
+
+SESSION KEYS: --- 
+- OpenID::Consumer::last_requested_endpoint
+- "OpenID::Consumer::DiscoveredServices::OpenID::Consumer::"
+
+SESSION KEYS: --- 
+- OpenID::Consumer::last_requested_endpoint
+- "OpenID::Consumer::DiscoveredServices::OpenID::Consumer::"
+
+SESSION KEYS: --- 
+- OpenID::Consumer::last_requested_endpoint
+- "OpenID::Consumer::DiscoveredServices::OpenID::Consumer::"
+

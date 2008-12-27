@@ -1,0 +1,10 @@
+Hello
+
+- if logged_in?
+  %a{:href => "/signout"}
+    Log Out
+- else
+  %a{:href => "/siginin"}
+    Log In
+    
+= yield

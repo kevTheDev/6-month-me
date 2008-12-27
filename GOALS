@@ -11,22 +11,35 @@ you can view past emails but only after they have been sent - no editing or any 
 
 Next logical steps
 
-send an email to the user - it is a copy of the email that they will be sent in six months, and also serves as a preliminary test to show them that the system works - get user confidence
-
-send email to user
 
 
-work out the date six months from now
+stop signing in being broken
+find user info from session cookie
+
+log in / log out links
 
 
 
-allow the user to create the email before signing in
 
-
-store info in user model so that we can sign in again - hacky version - store user id in session, and do user find each time requested
 write some kind of before filter - apply to all relevant actions so we make sure that the user is logged in
 
 error handling on open id submission
 
+work out the date six months from now
+
+cron job to send emails
+
+
+allow the user to create the email before signing in
+
 replace activerecord with datamapper or sequel?
+
+
+
+Session probs with OpenID:
+
+We pass a session hash to the OpenID Consumer instance
+we later on set a current_user value as a symbol key
+
+maybe the session hash should be set using strings
 

@@ -1,0 +1,16 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title
+      = @title || 'Six month reminder service'
+    %link{:rel => "stylesheet", :href => "/application.css", :type => "text/css", :media => "all"}
+  %body
+    %div{:id => "contents"}
+      %span{:id => "logo"}
+      - if logged_in?
+        %a{:href => "/signout"}
+          Log Out
+      - else
+        %a{:href => "/signin"}
+          Log In
+      = yield
