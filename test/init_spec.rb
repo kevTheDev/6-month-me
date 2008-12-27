@@ -39,3 +39,22 @@ describe "MyApp", "open id submission" do
   it "redirects to an open id provider"
   
 end
+
+describe "MyApp", "signin" do
+end
+
+describe "MyApp", "signout" do
+  
+  it "deletes the current_user key/value pair from the session hash" do
+    #session = {}
+    
+    get_it '/'
+    
+    session[:current_user] = 1
+    
+    signout
+    
+    session.has_key?(:current_user).should be_false
+  end
+  
+end

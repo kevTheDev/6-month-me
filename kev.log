@@ -132,3 +132,7 @@ SESSION KEYS: ---
 - OpenID::Consumer::last_requested_endpoint
 - "OpenID::Consumer::DiscoveredServices::OpenID::Consumer::"
 
+SESSION KEYS: --- 
+- OpenID::Consumer::last_requested_endpoint
+- "OpenID::Consumer::DiscoveredServices::OpenID::Consumer::"
+

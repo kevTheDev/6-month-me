@@ -88,7 +88,7 @@ get '/authentication_complete' do
   user.email = params["openid.sreg.email"]
   user.save
   
-  session[:current_user] = user.id
+  signin(user)
   
   redirect('new_email')
 end
@@ -97,31 +97,34 @@ get '/new_email' do
   haml :new_email
 end
 
-get '/create_email' do
-  
+post '/create_email' do  
   email = Email.new(:content => params[:email_content])
-  email.user_id = session[:current_user]
+  email.user_id = current_user.id
   email.save
   
-  current_user_id = session[:current_user].to_s
-  user = User.find(current_user_id)
-  
-
   # send the email
-  Pony.mail(:to => user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => email.content)  
+  Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => email.content)    
   
+  redirect('/email_sent')
+end
+
+get '/email_sent' do
+  haml :email_sent
 end
 
 get '/signin' do
-  redirect('/')
+  haml :signin
 end
 
 get '/signout' do
   signout
 end
 
+def signin(user)
+  session[:current_user] = user.id
+end
+
 def signout
-  #session[:current_user] = nil
   session.delete(:current_user)
   redirect('/')
 end
@@ -140,6 +143,5 @@ end
 
 def current_user
   return nil unless logged_in?
-  @current_user = User.find(session[:current_user])
-  @current_user
+  User.find(session[:current_user])
 end
