@@ -77,6 +77,15 @@ get '/new_email' do
   haml :new_email
 end
 
+get '/emails' do
+  haml :email_index
+end
+
+get '/emails/:id' do
+  @email = Email.find(params[:id])
+  haml :show_email
+end
+
 post '/create_email' do  
   email = Email.new(:content => params[:email_content], :user_id => current_user.id)
   

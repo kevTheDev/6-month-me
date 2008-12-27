@@ -3,14 +3,18 @@
   %head
     %title
       = @title || 'Six month reminder service'
-    %link{:rel => "stylesheet", :href => "/application.css", :type => "text/css", :media => "all"}
+    %link{:rel => "stylesheet", :href => "/stylesheets/application.css", :type => "text/css", :media => "all"}
   %body
-    %div{:id => "contents"}
-      %span{:id => "logo"}
-      - if logged_in?
-        %a{:href => "/signout"}
-          Log Out
-      - else
-        %a{:href => "/signin"}
-          Log In
+    %div{:id => "menu_bar"}
+      %div{:id => "links"}
+        - if logged_in?
+          %a{:href => "/signout"}
+            Log Out
+        - else
+          %a{:href => "/signin"}
+            Log In
+      %div{:class => "clear"}
+    %div{:id => "title_bar"}
+      Every Six Months
+    %div{:id => "contents"}      
       = yield
