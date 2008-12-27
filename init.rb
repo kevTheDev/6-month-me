@@ -5,10 +5,6 @@ require File.expand_path(File.dirname(__FILE__) + '/lib/config')
 
 require 'activerecord'
 require 'erb'
-require 'sequel'
-require 'sequel_core/adapters/shared/mysql'
-
-
 require 'yaml'
 
 require 'openid'
@@ -21,42 +17,34 @@ require 'lib/models/user'
 require 'lib/models/email'
 
 require 'pony'
+require 'session_helper'
 
 include ActiveRecord
+include SessionHelper
 
 
 enable :sessions
 
 # like a before filter on all actions
-before do
+configure do
   connect_database
+  LOGGER = Logger.new("#{APP_ENV}.log")  
+end
+
+before do
   
 end
 
-get '/signin' do
-  haml :signin
-end
-
-
-
 get '/' do
-  # if logged_in?
-  #     redirect('new_email')
-  #     return
-  #   end
-  haml :index
+  haml :home
 end
+
 
 
 # begin open id authentication
-get '/submit_open_id' do
+get '/submit_open_id' do  
   
-  
-  
-  open_id_store = ActiveRecordStore.new
-  open_id_consumer = OpenID::Consumer.new(session, open_id_store)
-
-  
+  open_id_consumer = OpenID::Consumer.new(session, ActiveRecordStore.new)  
   check_id_request = open_id_consumer.begin(params[:open_id_input])
   
   sregreq = OpenID::SReg::Request.new
@@ -70,17 +58,9 @@ end
 # end open id authentication
 get '/authentication_complete' do
   
-  open_id_store = ActiveRecordStore.new
-  open_id_consumer = OpenID::Consumer.new(session, open_id_store)
-  
-  logger = Logger.new("kev.log")
-  logger.info "SESSION KEYS: #{session.keys.to_yaml}"
-  
+  open_id_consumer = OpenID::Consumer.new(session, ActiveRecordStore.new)  
   oidresp = open_id_consumer.complete(session, "/authentication_complete")
 
-  
-  
-  
   identity_url = params["openid.identity"]
   
   user = User.find_or_create_by_identity_url(identity_url)
@@ -98,14 +78,16 @@ get '/new_email' do
 end
 
 post '/create_email' do  
-  email = Email.new(:content => params[:email_content])
-  email.user_id = current_user.id
-  email.save
+  email = Email.new(:content => params[:email_content], :user_id => current_user.id)
   
-  # send the email
-  Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => email.content)    
-  
-  redirect('/email_sent')
+  if email.save 
+    # send the email
+    Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => email.content)
+    redirect('/email_sent')
+  else
+    @error = "Please write something in the box below"
+    haml :new_email
+  end
 end
 
 get '/email_sent' do
@@ -118,30 +100,4 @@ end
 
 get '/signout' do
   signout
-end
-
-def signin(user)
-  session[:current_user] = user.id
-end
-
-def signout
-  session.delete(:current_user)
-  redirect('/')
-end
-
-def connect_database
-  ActiveRecord::Base.configurations = database_configuration
-  ActiveRecord::Base.establish_connection(APP_ENV)
-  ActiveRecord::Base.logger = Logger.new("ar.log")
-end
-
-def logged_in?
-  return false unless session
-  return false unless session[:current_user]
-  return true
-end
-
-def current_user
-  return nil unless logged_in?
-  User.find(session[:current_user])
 end

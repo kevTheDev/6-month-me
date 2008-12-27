@@ -9,5 +9,8 @@
   %label
     Write a letter to yourself
   %br
+  - if @error
+    %div
+      = @error
   %textarea{:name => "email_content", :cols => "50", :rows => "20"}
   %input{:type => "submit", :value => "submit"}
