@@ -104,7 +104,7 @@ post '/create_email' do
     Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => email.content)
     redirect('/email_sent')
   else
-    @error = "Please write something in the box below"
+    @error = "Now hold on a minute! You surely don't want to send yourself an empty letter do ya?"
     haml :new_email
   end
 end

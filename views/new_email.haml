@@ -1,11 +1,8 @@
-%h1
+%p
   Write a letter to yourself
   
 %div  
   %form{:action => "/create_email", :method => "POST"}
-    %label
-      Write a letter to yourself
-    %br
     - if @error
       %div{:class => "error"}
         = @error

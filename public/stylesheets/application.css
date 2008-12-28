@@ -15,6 +15,7 @@ body {
 
 .error {
 	color: #FF0000;
+	margin-bottom: 10px;
 }
 
 #contents {
