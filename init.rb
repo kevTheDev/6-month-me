@@ -44,6 +44,8 @@ end
 # begin open id authentication
 get '/submit_open_id' do  
   
+  begin
+  
   open_id_consumer = OpenID::Consumer.new(session, ActiveRecordStore.new)  
   check_id_request = open_id_consumer.begin(params[:open_id_input])
   
@@ -52,7 +54,12 @@ get '/submit_open_id' do
   sregreq.request_fields(["email"], true)
   check_id_request.add_extension(sregreq)
   
-  redirect(check_id_request.redirect_url("http://localhost:4567", "http://localhost:4567/authentication_complete"))
+  
+    redirect(check_id_request.redirect_url("http://localhost:4567", "http://localhost:4567/authentication_complete"))
+  rescue OpenID::DiscoveryFailure
+    @error = "Whoa there partner! Are you sure you typed your ID in right like?"
+    haml :signin
+  end
 end
 
 # end open id authentication
@@ -86,7 +93,10 @@ get '/emails/:id' do
   haml :show_email
 end
 
-post '/create_email' do  
+post '/create_email' do
+  
+  redirect('/') unless logged_in?
+  
   email = Email.new(:content => params[:email_content], :user_id => current_user.id)
   
   if email.save 

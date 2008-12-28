@@ -13,13 +13,17 @@ body {
 	background: #A9B3BB;
 }
 
+.error {
+	color: #FF0000;
+}
+
 #contents {
 	
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
+	font-size: 25px;
 	color: #FFFFFF;
 	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 #menu_bar {
@@ -31,8 +35,11 @@ body {
 
 #title_bar {
 	padding: 40px;
+	padding-left: 30px;
 	font-size: 50px;
 	font-family: Arial, Helvetica, sans-serif;
+	font-style: bold;
+	font-weight: bold;
 	background: #fdb62a;
 }
 
