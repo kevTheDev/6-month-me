@@ -31,10 +31,6 @@ configure do
   LOGGER = Logger.new("#{APP_ENV}.log")  
 end
 
-before do
-  
-end
-
 get '/' do
   haml :home
 end
@@ -81,6 +77,8 @@ get '/authentication_complete' do
 end
 
 get '/new_email' do
+  requires_login
+  
   haml :new_email
 end
 
@@ -95,7 +93,7 @@ end
 
 post '/create_email' do
   
-  redirect('/') unless logged_in?
+  requires_login
   
   email = Email.new(:content => params[:email_content], :user_id => current_user.id)
   

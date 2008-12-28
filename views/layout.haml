@@ -16,5 +16,13 @@
       %div{:class => "clear"}
     %div{:id => "title_bar"}
       Every Six Months
+    - if session[:notice] || session[:error]
+      %div
+        = session[:notice] if session[:notice]
+        = session[:error] if session[:error]
+        
+        - session.delete(:notice) && session.delete(:error)
+        
+        
     %div{:id => "contents"}      
       = yield
