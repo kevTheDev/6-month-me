@@ -10,5 +10,10 @@ class User < ActiveRecord::Base
   
   validates_presence_of :email
   validates_presence_of :identity_url
+  
+  def newest_delivery_date
+    return nil unless emails.any?
+    emails.last
+  end
 
 end

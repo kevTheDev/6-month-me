@@ -18,14 +18,7 @@ human readable format on emails
 rake task to send emails
 twice daily cron job run rake task
 
-register domain name
-dns
-
-setup server
-
 fix and add new specs
-
-deploy to server
 
 allow the user to create the email before signing in
 
@@ -36,4 +29,3 @@ cool icons
 
 what problem does 6 month reminder solve?
 icons to describe user flow and problem solved
-get satisfaction widget
