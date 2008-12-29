@@ -5,28 +5,30 @@
       = @title || 'Six month reminder service'
     %link{:rel => 'stylesheet', :href => '/stylesheets/application.css', :type => 'text/css', :media => 'all'}
   %body
-    %div{:id => 'menu_bar'}
-      %div{:id => 'links'}
-        - if logged_in?
-          %a{:href => "/signout"}
-            Log Out
-        - else
-          %a{:href => '/signin'}
-            Log In
-      %div{:class => 'clear'}
-    %div{:id => 'title_bar'}
-      Every Six Months
-    - if session[:flash]
-      %div{:class => 'flash'}
-        %p{:class => session[:flash].type.to_s }        
-          = session[:flash].content
-        
-        - session.delete(:flash)
-        
-        
-    %div{:id => 'contents'}      
-      = yield
-
+    %div{:id => 'container'}
+      %div{:id => 'menu_bar'}
+        %div{:id => 'links'}
+          - if logged_in?
+            %a{:href => "/signout"}
+              Log Out
+          - else
+            %a{:href => '/signin'}
+              Log In
+        %div{:class => 'clear'}
+      %div{:id => 'title_bar'}
+        Every Six Months
+      - if session[:flash]
+        %div{:class => 'flash'}
+          %p{:class => session[:flash].type.to_s }        
+            = session[:flash].content
+          
+          - session.delete(:flash)
+          
+          
+      %div{:id => 'contents'}      
+        = yield
+      .clearfooter
+       
     %div{:id => 'footer'}
       %a{:href => '/about'}
         About

@@ -11,19 +11,23 @@ you can view past emails but only after they have been sent - no editing or any 
 
 Next logical steps
 
-
-work out the date six months from now - and set on email field
-
-cron job to send emails
+email sent page makes no sense
+human readable format on emails
 
 
+rake task to send emails
+twice daily cron job run rake task
 
+register domain name
+dns
 
-allow the user to create the email before signing in
+setup server
 
 fix and add new specs
 
 deploy to server
+
+allow the user to create the email before signing in
 
 register on the open id app directory
 register on the appjack

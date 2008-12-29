@@ -132,7 +132,10 @@ post '/create_email' do
   
   if email.save 
     # send the email
-    Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => email.content)
+    body = "You will be sent a reminder email on: #{email.send_on}"
+    body += "\n"
+    body += email.content
+    Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => body)
     redirect('/email_sent')
   else
     @error = "Now hold on a minute! You surely don't want to send yourself an empty letter do ya?"
