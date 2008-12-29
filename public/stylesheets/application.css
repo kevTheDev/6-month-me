@@ -75,6 +75,7 @@ div#links a {
 	color: #FFFFFF;
 	font-size: 18px;
 	font-family: Arial, Helvetica, sans-serif;
+	margin-right: 10px;
 }
 
 h1, h2, h3 {
@@ -130,7 +131,7 @@ img.right {
 	margin-top: 20px;
 	background: #000000;
 	color: #FFFFFF;
-	font-size: 13px;
+	font-size: 18px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
@@ -141,6 +142,9 @@ img.right {
 
 
 #footer a {
+		margin-right: 5px;
+	margin-left: 5px;
+
 	text-align: center;
 	font-size: smaller;
 	color: #FFFFFF;

@@ -8,6 +8,8 @@
     %div{:id => 'container'}
       %div{:id => 'menu_bar'}
         %div{:id => 'links'}
+          %a{:href => '/'}
+            Home
           - if logged_in?
             %a{:href => "/signout"}
               Log Out
@@ -27,12 +29,8 @@
           
       %div{:id => 'contents'}      
         = yield
-      .clearfooter
-       
     %div{:id => 'footer'}
       %a{:href => '/about'}
-        About
-        |
-        
+        About        
       %a{:href => '/contact'}
         Contact
