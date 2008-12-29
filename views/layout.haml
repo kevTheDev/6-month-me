@@ -11,6 +11,8 @@
           %a{:href => '/'}
             Home
           - if logged_in?
+            %a{:href => '/emails'}
+              My Emails
             %a{:href => "/signout"}
               Log Out
           - else
