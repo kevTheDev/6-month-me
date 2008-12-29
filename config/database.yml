@@ -6,18 +6,18 @@ development:
 
 production:
   adapter: mysql
-  database: six_months__production
-  username: inuda
-  password: inov
+  database: six_months_production
+  username: root
+  password: 0utKast
 
 test:
   adapter: mysql
-  database: six_months__test
+  database: six_months_test
   username: root
   password:
 
 staging:
   adapter: mysql
-  database: six_months__staging
+  database: six_months_staging
   username: inuda
   password: inov
