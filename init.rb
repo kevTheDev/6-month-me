@@ -9,7 +9,7 @@ require 'yaml'
 
 require 'openid'
 
-require File.expand_path(File.dirname(__FILE__) + '/config/environment')
+require File.expand_path(File.dirname(__FILE__) + '/config/setup')
 
 require 'lib/active_record_store/active_record_store'
 require 'openid/extensions/sreg'
