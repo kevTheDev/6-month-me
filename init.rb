@@ -107,14 +107,20 @@ end
 get '/emails' do
   requires_login
   
-  @emails = Email.find(:all)
+  @emails = current_user.emails
   haml :email_index
 end
 
 get '/emails/:id' do
   requires_login
   
-  @email = current_user.emails.find(params[:id])
+  begin
+    @email = current_user.emails.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    set_flash_notice("Sorry there, you can only look at your own stuff right?")
+    redirect('/')
+  end
+  
   haml :show_email
 end
 
