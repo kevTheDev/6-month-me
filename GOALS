@@ -11,8 +11,8 @@ you can view past emails but only after they have been sent - no editing or any 
 
 Next logical steps
 
-email index action
-email view action
+email index only show your emails
+email show redirect if you don't own the emails
 
 before_filter on email index and show, and create
 

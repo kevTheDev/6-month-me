@@ -105,12 +105,16 @@ get '/new_email' do
 end
 
 get '/emails' do
+  requires_login
+  
   @emails = Email.find(:all)
   haml :email_index
 end
 
 get '/emails/:id' do
-  @email = Email.find(params[:id])
+  requires_login
+  
+  @email = current_user.emails.find(params[:id])
   haml :show_email
 end
 
