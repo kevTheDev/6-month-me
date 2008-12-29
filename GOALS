@@ -21,7 +21,8 @@ make the signin haml a partial
 
 get the openid icon
 
-store flash style messages in the session - put a hash in the session.
+encapsulate flash message code in class
+
 
 404 page
 500 page

@@ -13,6 +13,18 @@ body {
 	background: #A9B3BB;
 }
 
+input.openid
+{
+   background: url(/images/openid_small_logo.png) no-repeat;
+   background-position: 3px 50%;
+   padding: 3px;
+   padding-left: 21px;
+   border-style: solid;
+   border-color: #000000;
+   border-width: 1px;
+   background-color: #FFFFFF;
+}
+
 .error {
 	color: #FF0000;
 	margin-bottom: 10px;
