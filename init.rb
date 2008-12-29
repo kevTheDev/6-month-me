@@ -25,6 +25,21 @@ include SessionHelper
 
 enable :sessions
 
+helpers do
+ def partial(page, options={})
+   haml page, options.merge!(:layout => false)
+ end
+end
+
+not_found do
+  haml :error_404
+end
+
+error do
+  #'Sorry there was a nasty error - ' + request.env['sinatra.error'].name
+  haml :error_unknown
+end
+
 # like a before filter on all actions
 configure do
   connect_database

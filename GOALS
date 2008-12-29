@@ -17,17 +17,10 @@ email view action
 before_filter on email index and show, and create
 
 
-make the signin haml a partial
-
-about page
-terms and conditions
-contact page
-
 404 page
 500 page
 
 
-error handling on open id submission
 
 work out the date six months from now
 
@@ -44,3 +37,9 @@ deploy to server
 
 register on the open id app directory
 register on the appjack
+
+cool icons
+
+what problem does 6 month reminder solve?
+icons to describe user flow and problem solved
+get satisfaction widget
