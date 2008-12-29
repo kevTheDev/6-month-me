@@ -85,15 +85,15 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 3em;
-}
-
-h2 {
 	font-size: 2em;
 }
 
-h3 {
+h2 {
 	font-size: 1em;
+}
+
+h3 {
+	font-size: 0.5em;
 }
 
 p, ul, ol {
@@ -381,16 +381,17 @@ hr {
 /* Footer */
 
 #footer {
-	padding: 40px 0;
-	background: #3F4244 url(images/img18.gif) repeat-x;
-}
-
-#footer p {
+	background: #000000;
+	color: #FFFFFF;
+	font-size: 13px;
+	padding: 10px;
 	text-align: center;
-	font-size: smaller;
-	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 #footer a {
-	color: #666666;
+	text-align: center;
+	font-size: smaller;
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
 }

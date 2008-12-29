@@ -35,6 +35,13 @@ get '/' do
   haml :home
 end
 
+get '/about' do
+  haml :about
+end
+
+get '/contact' do
+  haml :contact
+end
 
 
 # begin open id authentication
