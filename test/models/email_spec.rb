@@ -22,5 +22,10 @@ describe Email, "create" do
       create_email(:content => nil)
     end.should_not change(Email, :count)
   end
+  
+  it "calculates the send_on field" do
+    email = create_email
+    email.send_on.should_not be_nil
+  end
 
 end

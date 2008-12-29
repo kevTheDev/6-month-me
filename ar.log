@@ -997,3 +997,49 @@ PARAMS: --- {}
   [4;36;1mEmail Load (0.2ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 33 AND (`emails`.user_id = 2)) [0m
   [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
   [4;36;1mEmail Load (0.2ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 33 AND (`emails`.user_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEmail Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `emails`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mEmail Create (0.2ms)[0m   [0;1mINSERT INTO `emails` (`updated_at`, `send_on`, `content`, `user_id`, `created_at`) VALUES('2008-12-29 16:30:02', NULL, 'email content', NULL, '2008-12-29 16:30:02')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mEmail Create (0.3ms)[0m   [0;1mINSERT INTO `emails` (`updated_at`, `send_on`, `content`, `user_id`, `created_at`) VALUES('2008-12-29 16:30:02', NULL, 'email content', NULL, '2008-12-29 16:30:02')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEmail Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `emails`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mEmail Create (0.3ms)[0m   [0;1mINSERT INTO `emails` (`updated_at`, `send_on`, `content`, `user_id`, `created_at`) VALUES('2008-12-29 16:32:52', NULL, 'email content', NULL, '2008-12-29 16:32:52')[0m
+  [4;35;1mEmail Update (0.5ms)[0m   [0mUPDATE `emails` SET `created_at` = '2008-12-29 16:32:52', `content` = 'email content', `updated_at` = '2008-12-29 16:32:52', `send_on` = '2008-12-29 16:32:52' WHERE `id` = 36[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEmail Create (0.3ms)[0m   [0mINSERT INTO `emails` (`updated_at`, `send_on`, `content`, `user_id`, `created_at`) VALUES('2008-12-29 16:32:52', NULL, 'email content', NULL, '2008-12-29 16:32:52')[0m
+  [4;36;1mEmail Update (0.5ms)[0m   [0;1mUPDATE `emails` SET `created_at` = '2008-12-29 16:32:52', `content` = 'email content', `updated_at` = '2008-12-29 16:32:52', `send_on` = '2008-12-29 16:32:52' WHERE `id` = 37[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEmail Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `emails`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mEmail Create (0.3ms)[0m   [0;1mINSERT INTO `emails` (`updated_at`, `send_on`, `content`, `user_id`, `created_at`) VALUES('2008-12-29 16:34:13', NULL, 'email content', NULL, '2008-12-29 16:34:13')[0m
+  [4;35;1mEmail Update (0.3ms)[0m   [0mUPDATE `emails` SET `created_at` = '2008-12-29 16:34:13', `content` = 'email content', `updated_at` = '2008-12-29 16:34:13', `send_on` = '2009-06-29 16:34:13' WHERE `id` = 38[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEmail Create (0.2ms)[0m   [0mINSERT INTO `emails` (`updated_at`, `send_on`, `content`, `user_id`, `created_at`) VALUES('2008-12-29 16:34:13', NULL, 'email content', NULL, '2008-12-29 16:34:13')[0m
+  [4;36;1mEmail Update (0.3ms)[0m   [0;1mUPDATE `emails` SET `created_at` = '2008-12-29 16:34:13', `content` = 'email content', `updated_at` = '2008-12-29 16:34:13', `send_on` = '2009-06-29 16:34:13' WHERE `id` = 39[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
