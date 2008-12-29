@@ -19,7 +19,9 @@ before_filter on email index and show, and create
 
 make the signin haml a partial
 
-get the openid icon
+about page
+terms and conditions
+contact page
 
 encapsulate flash message code in class
 

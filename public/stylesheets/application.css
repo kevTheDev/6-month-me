@@ -9,6 +9,20 @@ Released for free under a Creative Commons Attribution 2.5 License
 	padding: 0;
 }
 
+.flash {
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 30px;
+}
+
+.notice {
+	color: #0000FF;
+}
+
+.error {
+	color: #FF0000;
+}
+
 body {
 	background: #A9B3BB;
 }

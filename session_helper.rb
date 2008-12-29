@@ -1,3 +1,5 @@
+require 'lib/flash_message'
+
 module SessionHelper
   
   def signin(user)
@@ -38,21 +40,20 @@ module SessionHelper
     end
   end
   
-  def set_flash_notice(message)
-    set_flash_message(message, :notice)
+  def set_flash_notice(message_content)
+    set_flash_message(FlashMessage.new(message_content, :notice))
   end
   
-  def set_flash_error(message)
-    set_flash_message(message, :error)
+  def set_flash_error(message_content)
+    set_flash_message(FlashMessage.new(message_content, :error))
   end
   
-  def set_flash_message(message, message_type)
-    session[message_type] = message
+  def set_flash_message(message)
+    session[:flash] = message
   end
   
   def clear_flash
-    session.delete(:notice)
-    session.delete(:error)
+    session.delete(:flash)
   end
   
 end
