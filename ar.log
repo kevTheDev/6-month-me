@@ -904,3 +904,24 @@ PARAMS: --- {}
   [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
   [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
   [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `emails` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEmail Load (0.3ms)[0m   [0mSELECT * FROM `emails` [0m
+  [4;36;1mEmail Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `emails`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmail Load (0.2ms)[0m   [0;1mSELECT * FROM `emails` [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmail Load (0.2ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 29) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmail Load (0.3ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 29) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmail Load (0.2ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 29) [0m
+  [4;35;1mEmail Load (0.4ms)[0m   [0mSELECT * FROM `emails` WHERE (`emails`.`id` = 29) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEmail Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `emails`[0m
+  [4;36;1mEmail Load (0.9ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 29) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmail Load (0.2ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 29) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmail Load (0.2ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 29) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEmail Load (0.2ms)[0m   [0;1mSELECT * FROM `emails` WHERE (`emails`.`id` = 29) [0m

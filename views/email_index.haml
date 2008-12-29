@@ -1,6 +1,9 @@
 %h1
   Your six month reminders past and present
   
+  %ul
   - @emails.each do |email|
+    %li
       %a{:href => "emails/#{email.id}"}
-        View email due to be sent on email.
+        View email due to be sent on
+        = email.send_on

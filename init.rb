@@ -105,6 +105,7 @@ get '/new_email' do
 end
 
 get '/emails' do
+  @emails = Email.find(:all)
   haml :email_index
 end
 
