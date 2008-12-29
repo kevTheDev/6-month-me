@@ -6,16 +6,18 @@ load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 # app settings
 set :app_file, "init.rb"
 set :application, "six_month_letter"
-set :domain, "six_month_letter.com"
+set :domain, "sixmonthletter.com"
 role :app, domain
 role :web, domain
 role :db,  domain, :primary => true
 
 # general settings
+ssh_options[:port] = "30000"
 set :user, "deploy"
 set :group, "deploy"
 set :deploy_to, "/var/www/apps/#{application}"
 set :deploy_via, :remote_cache
+set :password, "b5a3cda3"
 default_run_options[:pty] = true
 
 # scm settings
