@@ -5,8 +5,11 @@ require 'sinatra/test/rspec'
 require 'init'
 require 'lib/models/user'
 
+require File.join(File.dirname(__FILE__), '../spec_helper')
 
 describe User, "create" do
+  
+  include UserSpecHelper
   
   it "can be created" do
     lambda do
@@ -14,16 +17,16 @@ describe User, "create" do
     end.should change(User, :count)
   end
   
-  protected
+  it "requires email" do
+    lambda do
+      create_user(:email => nil)
+    end.should_not change(User, :count)
+  end
   
-  def create_user(options={})
-    params = {
-      :name => "user_name"
-    }
-    
-    user = User.new(params.merge(options))
-    user.save
-    user
+  it "requires identity_url" do
+    lambda do
+      create_user(:identity_url => nil)
+    end.should_not change(User, :count)
   end
   
 end

@@ -68,3 +68,19 @@ describe "MyApp", "emails" do
   end
   
 end
+
+describe "MyApp", "emails/:id" do
+  
+  include EmailSpecHelper
+  
+  before do
+    email = 
+  end
+  
+  it "redirects a non-logged in user" do
+  end
+  
+  it "redirects a user that does not own this email"
+  
+  it "renders"
+  

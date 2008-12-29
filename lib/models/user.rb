@@ -7,5 +7,8 @@ class User < ActiveRecord::Base
   
   belongs_to  :open_id, :class_name => "Association", :foreign_key => :association_id
   has_many :emails
+  
+  validates_presence_of :email
+  validates_presence_of :identity_url
 
 end
