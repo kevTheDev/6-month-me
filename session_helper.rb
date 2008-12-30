@@ -19,7 +19,7 @@ module SessionHelper
   def connect_database
     ActiveRecord::Base.configurations = database_configuration
     ActiveRecord::Base.establish_connection(APP_ENV)
-    ActiveRecord::Base.logger = Logger.new("ar.log")
+    #ActiveRecord::Base.logger = Logger.new("ar.log")
   end
   
   def logged_in?

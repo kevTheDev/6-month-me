@@ -35,15 +35,19 @@ not_found do
   haml :error_404
 end
 
-error do
-  #'Sorry there was a nasty error - ' + request.env['sinatra.error'].name
-  haml :error_unknown
-end
+
 
 # like a before filter on all actions
 configure do
   connect_database
-  LOGGER = Logger.new("#{APP_ENV}.log")  
+  LOGGER = Logger.new("log/#{APP_ENV}.log")
+  ActiveRecord::Base.logger = LOGGER
+end
+
+error do
+  LOGGER.error "#{request.env['sinatra.error'].name}"
+  #'Sorry there was a nasty error - ' + request.env['sinatra.error'].name
+  haml :error_unknown
 end
 
 get '/' do
