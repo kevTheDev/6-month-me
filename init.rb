@@ -85,6 +85,7 @@ error do
 end
 
 get '/' do
+  already_logged_in
   haml :home
 end
 
@@ -100,8 +101,9 @@ end
 # begin open id authentication
 get '/submit_open_id' do  
   
-  begin
+  already_logged_in
   
+  begin  
     open_id_consumer = OpenID::Consumer.new(session, ActiveRecordStore.new)  
     check_id_request = open_id_consumer.begin(params[:open_id_input])
     
@@ -195,6 +197,7 @@ get '/email_scheduled' do
 end
 
 get '/signin' do
+  already_logged_in
   haml :signin
 end
 

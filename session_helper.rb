@@ -2,6 +2,13 @@ require 'lib/flash_message'
 
 module SessionHelper
   
+  def already_logged_in
+    if logged_in?
+      set_flash_notice("You are already logged in partner")
+      redirect('/new_email')
+    end
+  end
+  
   def signin(user)
     session[:current_user] = user.id
   end
