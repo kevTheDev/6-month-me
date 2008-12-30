@@ -1,13 +1,13 @@
 %table
   %tr
     %th
+      Due
     %th
     %th
   - @emails.each do |email|
     %tr
       %td
         %a{:href => "emails/#{email.id}", :class => 'email_link'}
-          due on
           = email.send_on.strftime(EMAIL_DATE_FORMAT)
       %td
         %a{:href => 'emails/:id/edit', :class => 'email_link'}
