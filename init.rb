@@ -43,6 +43,8 @@ configure do
   APP_ENV = 'development' 
   
   ActiveRecord::Base.logger = LOGGER
+  APP_URL = "http://localhost:4567"
+  
   
   connect_database(:development)
 end
@@ -53,6 +55,8 @@ configure :production do
 
   APP_ROOT = ENV['APP_ROOT']
   APP_ENV = 'production' 
+  
+  APP_URL = "http://sixmonthsletter.com"
   
   ActiveRecord::Base.logger = LOGGER
   
@@ -97,16 +101,16 @@ get '/submit_open_id' do
   
   begin
   
-  open_id_consumer = OpenID::Consumer.new(session, ActiveRecordStore.new)  
-  check_id_request = open_id_consumer.begin(params[:open_id_input])
+    open_id_consumer = OpenID::Consumer.new(session, ActiveRecordStore.new)  
+    check_id_request = open_id_consumer.begin(params[:open_id_input])
+    
+    sregreq = OpenID::SReg::Request.new
+    
+    sregreq.request_fields(["email"], true)
+    check_id_request.add_extension(sregreq)
   
-  sregreq = OpenID::SReg::Request.new
-
-  sregreq.request_fields(["email"], true)
-  check_id_request.add_extension(sregreq)
   
-  
-    redirect(check_id_request.redirect_url("http://localhost:4567", "http://localhost:4567/authentication_complete"))
+    redirect(check_id_request.redirect_url(APP_URL,  "#{APP_URL}/authentication_complete"))
   rescue OpenID::DiscoveryFailure
     @error = "Whoa there partner! Are you sure you typed your ID in right like?"
     haml :signin
