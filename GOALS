@@ -11,8 +11,11 @@ you can view past emails but only after they have been sent - no editing or any 
 
 Next logical steps
 
-email sent page makes no sense
-human readable format on emails
+
+make the logger work and put it in log
+ignore all log files in app root remove from git
+human readable format on emails dates
+sort out email formatting
 
 
 rake task to send emails
