@@ -56,7 +56,7 @@ configure :production do
   APP_ROOT = ENV['APP_ROOT']
   APP_ENV = 'production' 
   
-  APP_URL = "http://sixmonthsletter.com"
+  APP_URL = "http://sixmonthletter.com"
   
   ActiveRecord::Base.logger = LOGGER
   
