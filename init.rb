@@ -78,10 +78,13 @@ end
 
 
 error do
-
-  'Sorry there was a nasty error - ' + request.env['sinatra.error']
-  #LOGGER.info "#{request.env['sinatra.error']}"
-  #haml :error_unknown
+  error = request.env['sinatra.error']
+  error_string = error.message    
+  error_string += error.backtrace.join("\n")
+  
+  LOGGER.info "ERROR: #{error_string}"
+  
+  haml :error_unknown
 end
 
 get '/' do
@@ -117,10 +120,6 @@ get '/submit_open_id' do
   rescue OpenID::DiscoveryFailure
     @error = "Whoa there partner! Are you sure you typed your ID in right like?"
     haml :signin
-  rescue => e
-    error_string = e.message    
-    error_string += e.backtrace.join("\n")
-    error_string
   end
 end
 
@@ -159,15 +158,8 @@ end
 
 get '/unsent_emails' do
   requires_login
-  begin
   @emails = current_user.unsent_emails
   haml :unsent_emails
-  rescue => e
-    error_string = e.message    
-    error_string += e.backtrace.join("\n")
-    error_string
-  end
-  
 end
 
 get '/sent_emails' do
