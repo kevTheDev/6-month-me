@@ -29,6 +29,8 @@ helpers do
 end
 
 not_found do
+  LOGGER.info "Request: #{request.to_yaml}"
+  
   haml :error_404
 end
 
@@ -180,6 +182,32 @@ get '/emails/:id' do
   end
   
   haml :show_email
+end
+
+get '/emails/:id/edit' do
+  requires_login
+  
+  begin
+    @email = current_user.emails.find(params[:id])
+    haml :edit_email
+  rescue ActiveRecord::RecordNotFound
+    set_flash_notice("Sorry there, you can only look at your own stuff right?")
+    redirect('/')
+  end
+end
+
+put '/emails/:id' do
+  requires_login
+  
+  begin
+    @email = current_user.emails.find(params[:id])
+    @email.update_attribute(:content, params[:email_content])
+    set_flash_notice("Alternative future calculated")
+    redirect('/unsent_emails')
+  rescue ActiveRecord::RecordNotFound
+    set_flash_notice("Sorry there, you can only look at your own stuff right?")
+    redirect('/')
+  end
 end
 
 get '/emails/:id/cancel' do
