@@ -45,9 +45,10 @@ configure do
 end
 
 error do
-  LOGGER.error "#{request.env['sinatra.error'].name}"
-  #'Sorry there was a nasty error - ' + request.env['sinatra.error'].name
-  haml :error_unknown
+
+  'Sorry there was a nasty error - ' + request.env['sinatra.error'].name
+  LOGGER.info "#{request.env['sinatra.error'].name}"
+  #haml :error_unknown
 end
 
 get '/' do
@@ -99,7 +100,7 @@ get '/authentication_complete' do
   
   signin(user)
   
-  redirect('new_email')
+  redirect('/new_email')
 end
 
 get '/new_email' do
