@@ -129,6 +129,8 @@ get '/authentication_complete' do
 
   identity_url = params["openid.identity"]
   
+  #LOGGER.info "User class: #{User.class.to_s}"
+  
   user = User.find_or_create_by_identity_url(identity_url)
   
   user.email = params["openid.sreg.email"]
