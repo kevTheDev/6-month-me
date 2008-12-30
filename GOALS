@@ -11,7 +11,6 @@ you can view past emails but only after they have been sent - no editing or any 
 
 Next logical steps
 
-SPEED UP PONY? OR, SEND EMAIL IN BACKGROUND THREAD SO AS NOT TO BLOCK REQUESTS
 
 human readable format on emails dates
 sort out email formatting
@@ -33,3 +32,7 @@ cool icons
 
 what problem does 6 month reminder solve?
 icons to describe user flow and problem solved
+
+
+Time::DATE_FORMATS[:tourdust_date] = "%d, %b, %y, %I:%M%p"
+Time::DATE_FORMATS[:statement_date] = "%d-%m-%y"

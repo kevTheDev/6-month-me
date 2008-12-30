@@ -3,5 +3,5 @@
   
 %p
   A Six Month Reminder has been scheduled for delivery on
-  = current_user.newest_delivery_date.send_on
+  = current_user.newest_delivery_date.send_on.strftime(EMAIL_DATE_FORMAT)
    

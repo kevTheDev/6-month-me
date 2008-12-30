@@ -32,6 +32,7 @@ not_found do
   haml :error_404
 end
 
+EMAIL_DATE_FORMAT = "%m/%d/%Y"
 
 
 # like a before filter on all actions
@@ -175,7 +176,7 @@ post '/create_email' do
   
   if email.save 
     # send the email
-    body = "You will be sent a reminder email on: #{email.send_on}"
+    body = "You will be sent a reminder email on: #{email.send_on.strftime(EMAIL_DATE_FORMAT)}"
     body += "\n"
     body += email.content
     
