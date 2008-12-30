@@ -16,10 +16,9 @@ module SessionHelper
     clear_flash    
   end
   
-  def connect_database
+  def connect_database(env=:development)
     ActiveRecord::Base.configurations = database_configuration
-    ActiveRecord::Base.establish_connection(APP_ENV)
-    #ActiveRecord::Base.logger = Logger.new("ar.log")
+    ActiveRecord::Base.establish_connection(env)
   end
   
   def logged_in?

@@ -11,11 +11,10 @@ you can view past emails but only after they have been sent - no editing or any 
 
 Next logical steps
 
-
-make the logger work and put it in log
-ignore all log files in app root remove from git
 human readable format on emails dates
 sort out email formatting
+
+don't allow the user to attempt login twice
 
 
 rake task to send emails

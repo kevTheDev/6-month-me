@@ -1,8 +1,5 @@
 require 'rubygems'
 require 'sinatra'
-
-require File.expand_path(File.dirname(__FILE__) + '/lib/config')
-
 require 'activerecord'
 require 'erb'
 require 'yaml'
@@ -39,15 +36,46 @@ end
 
 # like a before filter on all actions
 configure do
-  connect_database
-  LOGGER = Logger.new("log/#{APP_ENV}.log")
+  LOGGER = Logger.new("log/development.log")    
+  ENV['APP_ROOT'] ||= "#{File.dirname(__FILE__)}"
+
+  APP_ROOT = ENV['APP_ROOT']
+  APP_ENV = 'development' 
+  
   ActiveRecord::Base.logger = LOGGER
+  
+  connect_database(:development)
 end
+
+configure :production do
+  LOGGER = Logger.new("log/production.log")    
+  ENV['APP_ROOT'] ||= "#{File.dirname(__FILE__)}"
+
+  APP_ROOT = ENV['APP_ROOT']
+  APP_ENV = 'production' 
+  
+  ActiveRecord::Base.logger = LOGGER
+  
+  connect_database(:production)
+end
+
+configure :test do
+  LOGGER = Logger.new("log/test.log")    
+  ENV['APP_ROOT'] ||= "#{File.dirname(__FILE__)}"
+
+  APP_ROOT = ENV['APP_ROOT']
+  APP_ENV = 'test' 
+  
+  ActiveRecord::Base.logger = LOGGER
+  
+  connect_database(:test)
+end
+
 
 error do
 
-  'Sorry there was a nasty error - ' + request.env['sinatra.error'].name
-  LOGGER.info "#{request.env['sinatra.error'].name}"
+  'Sorry there was a nasty error - ' + request.env['sinatra.error']
+  #LOGGER.info "#{request.env['sinatra.error']}"
   #haml :error_unknown
 end
 

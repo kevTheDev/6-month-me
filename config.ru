@@ -5,5 +5,5 @@ Sinatra::Application.default_options.merge!(
   :env => :production
 )
  
-require File.expand_path(File.dirname(__FILE__) + '/../init')
+require File.expand_path(File.dirname(__FILE__), 'init')
 run Sinatra.application

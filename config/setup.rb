@@ -1,8 +1,8 @@
-ENV['APP_ENV'] ||= 'production'
-ENV['APP_ROOT'] ||= "#{File.dirname(__FILE__)}"
-
-APP_ENV = ENV['env']
-APP_ROOT = ENV['APP_ROOT']
+# ENV['APP_ENV'] ||= 'production'
+# ENV['APP_ROOT'] ||= "#{File.dirname(__FILE__)}"
+# 
+# APP_ENV = ENV['APP_ENV']
+# APP_ROOT = ENV['APP_ROOT']
 
 def database_configuration_file
   File.join(File.dirname(__FILE__), 'database.yml')
