@@ -179,6 +179,10 @@ img.right {
 	width: 35%;
 }
 
+.two_thirds_width {
+	width: 66%;
+}
+
 .left {
 	float: left;
 
