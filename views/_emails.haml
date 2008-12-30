@@ -1,0 +1,6 @@
+%ul
+  - @emails.each do |email|
+    %li
+      %a{:href => "emails/#{email.id}", :class => 'email_link'}
+        View email due to be sent on
+        = email.send_on.strftime(EMAIL_DATE_FORMAT)

@@ -20,4 +20,15 @@ class User < ActiveRecord::Base
     emails.last
   end
 
+  def unsent_emails
+    Email.find(:all, :conditions => {
+      :user_id => self.id,
+      :sent_at => nil
+    })
+  end
+  
+  def sent_emails
+    Email.find(:all, :conditions => "user_id = #{self.id} AND sent_at IS NOT NULL")
+  end
+
 end

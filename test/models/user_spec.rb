@@ -7,9 +7,10 @@ require 'lib/models/user'
 
 require File.join(File.dirname(__FILE__), '../spec_helper')
 
+include UserSpecHelper
+include EmailSpecHelper
+
 describe User, "create" do
-  
-  include UserSpecHelper
   
   it "can be created" do
     lambda do
@@ -31,3 +32,38 @@ describe User, "create" do
   
 end
 
+describe User, "unsent_emails" do
+  
+  it "returns [] if no emails to be sent for this user" do
+    user = create_user
+    user.unsent_emails.should == []
+  end
+  
+  it "returns an array of emails that have not been sent for this user" do
+    user = create_user
+    
+    2.times { |n| create_email(:user_id => user.id, :sent_at => DateTime.now) }
+    3.times { |n| create_email(:user_id => user.id) }
+    
+    user.unsent_emails.length.should == 3
+  end
+  
+end
+
+describe User, "sent_emails" do
+  
+  it "returns [] if no emails have been sent for this user" do
+    user = create_user
+    user.sent_emails.should == []
+  end
+  
+  it "returns an array of emails that have been sent for this user" do
+    user = create_user
+    
+    2.times { |n| create_email(:user_id => user.id, :sent_at => DateTime.now) }
+    3.times { |n| create_email(:user_id => user.id) }
+    
+    user.sent_emails.length.should == 2
+  end
+  
+end

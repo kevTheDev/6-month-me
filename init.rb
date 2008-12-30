@@ -157,6 +157,20 @@ get '/emails' do
   haml :email_index
 end
 
+get '/unsent_emails' do
+  requires_login
+  
+  @emails = current_user.unsent_emails
+  haml :unsent_emails
+end
+
+get '/sent_emails' do
+  requires_login
+  
+  @emails = current_user.sent_emails
+  haml :sent_emails
+end
+
 get '/emails/:id' do
   requires_login
   
