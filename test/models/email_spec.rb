@@ -7,9 +7,10 @@ require 'lib/models/email'
 
 require File.join(File.dirname(__FILE__), '../spec_helper')
 
-describe Email, "create" do
-  
-  include EmailSpecHelper
+include EmailSpecHelper
+
+
+describe Email, "create" do  
   
   it "can be created" do
     lambda do
@@ -28,4 +29,18 @@ describe Email, "create" do
     email.send_on.should_not be_nil
   end
 
+end
+
+describe Email, "sent" do
+  
+  it "returns true if sent_at not nil" do
+    email = create_email(:sent_at => DateTime.now)
+    email.should be_sent
+  end
+  
+  it "returns false if sent_at nil" do
+    email = create_email
+    email.should_not be_sent
+  end
+  
 end

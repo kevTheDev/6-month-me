@@ -74,13 +74,15 @@ describe "MyApp", "emails/:id" do
   include EmailSpecHelper
   
   before do
-    email = 
+    #email = 
   end
   
   it "redirects a non-logged in user" do
+    pending
   end
   
   it "redirects a user that does not own this email"
   
   it "renders"
+end
   

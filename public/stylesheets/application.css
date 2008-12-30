@@ -157,7 +157,10 @@ img.right {
 
 }
 
-
+#email_content {
+	color: #000000;
+	width: 66%;
+}
 
 /* FLASH MESSAGES */
 

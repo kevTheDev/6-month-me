@@ -9,9 +9,13 @@
       %td
         %a{:href => "emails/#{email.id}", :class => 'email_link'}
           = email.send_on.strftime(EMAIL_DATE_FORMAT)
-      %td
-        %a{:href => 'emails/:id/edit', :class => 'email_link'}
-          edit
-      %td
-        %a{:href => 'emails/:id/cancel', :class => 'email_link', :confirm => 'Are You sure you want to cancel this email?'}
-          cancel
+      - if email.sent?
+        %td
+        %td
+      - else 
+        %td
+          %a{:href => "emails/#{email.id}/edit", :class => 'email_link'}
+            edit
+        %td
+          %a{:href => "emails/#{email.id}/cancel", :class => 'email_link', :confirm => 'Are You sure you want to cancel this email?', :method => :delete}
+            cancel

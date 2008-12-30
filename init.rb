@@ -182,6 +182,19 @@ get '/emails/:id' do
   haml :show_email
 end
 
+get '/emails/:id/cancel' do
+  requires_login
+  
+  begin
+    @email = current_user.emails.find(params[:id])
+    @email.delete
+    redirect('/unsent_emails')
+  rescue ActiveRecord::RecordNotFound
+    set_flash_notice("Sorry there, you can only look at your own stuff right?")
+    redirect('/')
+  end
+end
+
 post '/create_email' do
   
   requires_login

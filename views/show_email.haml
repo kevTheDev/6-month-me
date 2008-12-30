@@ -1,9 +1,13 @@
-%h1
-  One of your six month reminders
+- if @email.sent?
+  %h1
+    A letter from the past
+-else
+  %h1
+    A letter to the future
   
 %p
   Due to be sent on
-  = @email.send_on
+  = @email.send_on.strftime(EMAIL_DATE_FORMAT)
   
-%p
+%p{:id => 'email_content'}
   = @email.content

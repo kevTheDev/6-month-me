@@ -4,11 +4,13 @@ With OpenId you should not have to log in - you supply your openID email and let
 you do not supply a date - it is just 6 months from now.
 No public or private - just private.
 
-You can view emails that you have sent (Not edit them but you can soft delete them)
+You can view emails that you have sent (No edit or delete)
 You can view, edit and cancel reminders that have not yet been sent
 
 Next logical steps
 
+edit email
+cancel email
 sort out email formatting
 
 rake task to send emails

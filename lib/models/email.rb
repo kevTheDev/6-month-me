@@ -9,6 +9,10 @@ class Email < ActiveRecord::Base
   
   after_create :calculate_send_date
   
+  def sent?
+    !sent_at.nil?
+  end
+  
   private
   
   def calculate_send_date
