@@ -6,7 +6,7 @@ class CreateOpenIdAssociations < ActiveRecord::Migration
       t.string :handle
       t.string :secret
       t.integer :issued
-      t.string :lifetime
+      t.double :lifetime
       t.string :assoc_type
       
       t.timestamps

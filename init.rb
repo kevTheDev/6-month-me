@@ -110,6 +110,10 @@ get '/submit_open_id' do
   rescue OpenID::DiscoveryFailure
     @error = "Whoa there partner! Are you sure you typed your ID in right like?"
     haml :signin
+  rescue => e
+    error_string = e.message    
+    error_string += e.backtrace.join("\n")
+    error_string
   end
 end
 
