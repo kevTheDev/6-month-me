@@ -178,7 +178,10 @@ post '/create_email' do
     body = "You will be sent a reminder email on: #{email.send_on}"
     body += "\n"
     body += email.content
-    Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => body)
+    
+    Thread.new do
+      Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => body)
+    end
     redirect('/email_scheduled')
   else
     @error = "Now hold on a minute! You surely don't want to send yourself an empty letter do ya?"

@@ -11,6 +11,8 @@ you can view past emails but only after they have been sent - no editing or any 
 
 Next logical steps
 
+SPEED UP PONY? OR, SEND EMAIL IN BACKGROUND THREAD SO AS NOT TO BLOCK REQUESTS
+
 human readable format on emails dates
 sort out email formatting
 
