@@ -7,12 +7,12 @@
   %body
     %div{:id => 'container'}
       %div{:id => 'menu_bar'}
-        %div{:id => 'links'}
-          %a{:href => '/'}
-            Home
+        %div{:id => 'links'}          
           - if logged_in?
+            %a{:href => '/new_email'}
+              New Letter
             %a{:href => '/emails'}
-              My Emails
+              My Letters
             %a{:href => "/signout"}
               Log Out
           - else

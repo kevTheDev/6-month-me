@@ -159,9 +159,15 @@ end
 
 get '/unsent_emails' do
   requires_login
-  
+  begin
   @emails = current_user.unsent_emails
   haml :unsent_emails
+  rescue => e
+    error_string = e.message    
+    error_string += e.backtrace.join("\n")
+    error_string
+  end
+  
 end
 
 get '/sent_emails' do

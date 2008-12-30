@@ -1,6 +1,17 @@
-%ul
+%table
+  %tr
+    %th
+    %th
+    %th
   - @emails.each do |email|
-    %li
-      %a{:href => "emails/#{email.id}", :class => 'email_link'}
-        View email due to be sent on
-        = email.send_on.strftime(EMAIL_DATE_FORMAT)
+    %tr
+      %td
+        %a{:href => "emails/#{email.id}", :class => 'email_link'}
+          due on
+          = email.send_on.strftime(EMAIL_DATE_FORMAT)
+      %td
+        %a{:href => 'emails/:id/edit', :class => 'email_link'}
+          edit
+      %td
+        %a{:href => 'emails/:id/cancel', :class => 'email_link', :confirm => 'Are You sure you want to cancel this email?'}
+          cancel

@@ -1,10 +1,14 @@
 %h1
-  Your six month reminders past and present
+  Your six month letters
   
-%a{:href => "/past_emails"}
-  Past Reminders
+%p
+  From here you can access your six month letters, both past and present
 
-%br
+%div{:class => 'third_width'}
+  %a{:href => "/sent_emails", :class => 'left'}
+    Letters from the past
   
-%a{:href => '/current_emails'}
-  Reminders not yet sent
+  %a{:href => '/unsent_emails', :class => 'right'}
+    Letters of the future
+    
+%div{:class => 'clear'}
