@@ -1,4 +1,13 @@
 %h1
-  Reminders you have sent in the past
+  Letters of the past
   
-= partial :_emails
+%p
+  These are letters that your former self once wrote. It's like some kind of time capsule or something!
+
+- if @emails.any?
+  = partial :_emails
+- else
+  %p
+    Your time capsule is empty:
+    %a{:href => '/new_email'}
+      fill it up!
