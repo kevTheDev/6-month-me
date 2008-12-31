@@ -30,3 +30,17 @@ module EmailSpecHelper
   end
   
 end
+
+module SpecHelper
+  
+  include UserSpecHelper
+  include EmailSpecHelper
+  
+  protected
+  
+  def clear_db
+    User.delete_all
+    Email.delete_all
+  end
+  
+end

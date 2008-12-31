@@ -7,10 +7,13 @@ require 'lib/models/user'
 
 require File.join(File.dirname(__FILE__), '../spec_helper')
 
-include UserSpecHelper
-include EmailSpecHelper
+include SpecHelper
 
 describe User, "create" do
+  
+  before do
+    clear_db
+  end
   
   it "can be created" do
     lambda do
@@ -34,6 +37,10 @@ end
 
 describe User, "unsent_emails" do
   
+  before do
+    clear_db
+  end
+  
   it "returns [] if no emails to be sent for this user" do
     user = create_user
     user.unsent_emails.should == []
@@ -51,6 +58,10 @@ describe User, "unsent_emails" do
 end
 
 describe User, "sent_emails" do
+  
+  before do
+    clear_db
+  end
   
   it "returns [] if no emails have been sent for this user" do
     user = create_user

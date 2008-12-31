@@ -13,6 +13,15 @@ class Email < ActiveRecord::Base
     !sent_at.nil?
   end
   
+  def address
+    user.email
+  end
+  
+  # all unsent emails that should have been sent before now
+  def self.scheduled_emails    
+    find(:all, :conditions => "sent_at IS NULL AND send_on < NOW()")
+  end
+  
   private
   
   def calculate_send_date

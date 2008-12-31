@@ -3,12 +3,12 @@ task :default => :environment do
   Dir["test/**/*.rb"].sort.each { |test|  load test }
 end
 
-# # start thin
-# task :start_server do
-#   system "thin -C thin/development_config.yml -R thin/config.ru start"
-# end
-# 
-# # stop thin
-# task :stop_server do
-# end
+# sends any scheduled emails
+task :send_reminders => :environment do
+  
+  Email.scheduled_emails.each do |email|
+    Pony.mail(:to => email.address, :from => 'noreply@sixmonthsme.com', :subject => 'A Letter From Your Past', :body => email.content)
+  end
+  
+end
 
