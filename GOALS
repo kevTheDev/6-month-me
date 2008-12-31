@@ -9,13 +9,18 @@ You can view, edit and cancel reminders that have not yet been sent
 
 Next logical steps
 
-register a shell company for my personal projects
+copy on home page
 
-http basic auth
 sort out email formatting
 
 rake task to send emails
 twice daily cron job run rake task
+
+hide whois information
+
+proper terms and conditions
+register shell company
+
 
 fix and add new specs
 
@@ -33,6 +38,6 @@ icons to describe user flow and problem solved
 Time::DATE_FORMATS[:tourdust_date] = "%d, %b, %y, %I:%M%p"
 Time::DATE_FORMATS[:statement_date] = "%d-%m-%y"
 
-GOTCHA:
+Sinatra / ActiveRecord GOTCHA:
 
 If there is a column missing from the model at the db level, get error like: "unknown method for #"
