@@ -37,7 +37,7 @@ class Email < ActiveRecord::Base
   
   # all unsent emails that should have been sent before now
   def self.scheduled_emails    
-    find(:all, :conditions => "sent_at IS NULL AND send_on < NOW()")
+    find(:all, :conditions => "sent_at IS NULL AND send_on < NOW() AND user_id IS NOT NULL")
   end
   
 end

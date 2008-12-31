@@ -13,7 +13,8 @@ copy on home page
 
 sort out email formatting
 
-rake task to send emails
+call to action on receipt of email
+
 twice daily cron job run rake task
 
 hide whois information
