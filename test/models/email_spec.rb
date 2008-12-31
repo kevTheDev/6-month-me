@@ -77,7 +77,7 @@ describe Email, "scheduled_emails" do
     Email.scheduled_emails.should == []
   end
   
-  it "returns an array of scheduled emails (sent_at IS NULL && send_on < DateTime.now)" do
+  it "returns an array of scheduled emails (sent_at IS NULL && send_on < DateTime.now AND user_id IS NOT NULL)" do
     date_5_secs_ago = DateTime.now - 30
     date_10_ago = Time.now - 10
     
@@ -89,6 +89,11 @@ describe Email, "scheduled_emails" do
     3.times do |n|
       email = create_email(:sent_at => date_10_ago)
       email.update_attribute(:send_on, date_10_ago)
+    end
+    
+    2.times do |n|
+      email = create_email(:user_id => nil)
+      email.update_attribute(:send_on, date_5_secs_ago)
     end
     
     Email.scheduled_emails.length.should == 2

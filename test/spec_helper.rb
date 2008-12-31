@@ -20,8 +20,10 @@ module EmailSpecHelper
   protected
   
   def create_email(options={})
+    
     params = {
-      :content => "email content"
+      :content => "email content",
+      :user_id => 1
     }
     
     email = Email.new(params.merge(options))
