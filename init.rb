@@ -15,12 +15,18 @@ require 'lib/models/email'
 
 require 'pony'
 require 'session_helper'
+require 'lib/authentication'
 
 include ActiveRecord
 include SessionHelper
 
+include Sinatra::Authorization
 
 enable :sessions
+
+before do
+  require_administrative_privileges
+end
 
 helpers do
  def partial(page, options={})
