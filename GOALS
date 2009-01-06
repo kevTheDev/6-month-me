@@ -14,23 +14,25 @@ copy on home page
 sort out email formatting
 
 call to action on receipt of email
-
-twice daily cron job run rake task
-
 hide whois information
 
+js confirm on cancel reminder
+style links as buttons on email index
+styling for flash messages
+google analytics
+site map
+
 proper terms and conditions
+better contact page
 register shell company
-
-
-fix and add new specs
 
 allow the user to create the email before signing in
 
+logo/icons
+
+register on the github list of apps that use sinatra
 register on the open id app directory
 register on the appjack
-
-cool icons
 
 what problem does 6 month reminder solve?
 icons to describe user flow and problem solved
