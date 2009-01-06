@@ -24,9 +24,9 @@ include Sinatra::Authorization
 
 enable :sessions
 
-# before do
-#   require_administrative_privileges
-# end
+before do
+  require_administrative_privileges
+end
 
 helpers do
  def partial(page, options={})
