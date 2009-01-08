@@ -63,8 +63,9 @@ input.openid
 }
 
 #title_bar {
-	padding: 40px;
 	padding-left: 30px;
+	padding-top: 10px;
+	padding-bottom: 5px;
 	font-size: 50px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-style: bold;
@@ -73,7 +74,6 @@ input.openid
 }
 
 #tagline {
-	#padding: 40px;
 	font-size: 30px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-style: bold;
