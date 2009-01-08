@@ -272,12 +272,14 @@ post '/create_email' do
   
   if email.save 
     # send the email
-    body = "You will be sent a reminder email on: #{email.send_on.strftime(EMAIL_DATE_FORMAT)}"
-    body += "\n"
-    body += email.content
+    body = "Thanks for using sixmonthletter.com"
+    body += "\n\n"
+    body += "Your letter will be delivered on: #{email.send_on.strftime(EMAIL_DATE_FORMAT)}"
+    body += "\n\n"
+    body += "See you in six months!"
     
     Thread.new do
-      Pony.mail(:to => current_user.email, :from => 'admin@sixmonthsme.com', :subject => 'your six month reminder', :body => body)
+      Pony.mail(:to => current_user.email, :from => 'admin@sixmonthletter.com', :subject => 'Your Six Month Letter', :body => body)
     end
     redirect('/email_scheduled')
   else
