@@ -4,9 +4,10 @@
     %title
       = @title || 'Six Month Letter'
     %link{:rel => 'stylesheet', :href => '/stylesheets/application.css', :type => 'text/css', :media => 'all'}
-    %plain
+    :plain
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
       <script type="text/javascript" src="/javascript/application.js"></script>
+      <script src="http://sixmonthletter.uservoice.com/pages/general/widgets/tab.js?alignment=right&amp;color=00BCBA" type="text/javascript"></script>
   %body
     %div{:id => 'container'}
       %div{:id => 'menu_bar'}
@@ -43,11 +44,13 @@
         About        
       %a{:href => '/contact'}
         Contact
-    %script{:type=>"text/javascript"}
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    %script{:type=>"text/javascript"}
-      try {var pageTracker = _gat._getTracker("UA-6927313-1");pageTracker._trackPageview();} catch(err) {}</script>
-
-    
-%plain
-  <script src="http://sixmonthletter.uservoice.com/pages/general/widgets/tab.js?alignment=right&amp;color=00BCBA" type="text/javascript"></script>
+    :plain
+      <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+      var pageTracker = _gat._getTracker("UA-6927313-1");
+      pageTracker._initData();
+      pageTracker._trackPageview();
+      </script>
