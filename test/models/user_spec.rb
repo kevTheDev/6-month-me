@@ -33,6 +33,18 @@ describe User, "create" do
     end.should_not change(User, :count)
   end
   
+  it "doesn't require identity_url if regular signup process underway" do
+    lambda do
+      create_user(:identity_url => nil, :regular_signup => true, :password => "testpass")
+    end.should change(User, :count)
+  end
+  
+  it "requires a password if regular signup process underway" do
+    lambda do
+      create_user(:identity_url => nil, :regular_signup => true, :password => nil)
+    end.should_not change(User, :count)
+  end
+    
 end
 
 describe User, "unsent_emails" do

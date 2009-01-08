@@ -9,17 +9,26 @@ You can view, edit and cancel reminders that have not yet been sent
 
 Next logical steps
 
+register with email & password
+login with email & password
+
+JS to switch between openid and regular auth
 copy on home page
 
 sort out email formatting
-
 call to action on receipt of email
-hide whois information
+google analytics
+
+post to steve pavlina forums
+post to hacker news forums
+
+
+hide whois information - apparently this cannot be done???
 
 js confirm on cancel reminder
 style links as buttons on email index
 styling for flash messages
-google analytics
+
 site map
 
 proper terms and conditions

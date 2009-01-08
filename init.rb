@@ -108,6 +108,29 @@ get '/contact' do
   haml :contact
 end
 
+# regular registration page
+get '/signup' do
+  already_logged_in
+  haml :signup
+end
+
+post '/create_user' do
+  LOGGER.info "CREATE USER"
+  
+  user = User.new({
+    :email => params[:email],
+    :password => params[:password]
+  })
+  
+  user.regular_signup = true
+  
+  LOGGER.info "User: #{user.to_yaml}"
+  
+  LOGGER.info "USer SAved: #{user.save}"
+  LOGGER.info "Errors: #{user.errors.to_yaml}"
+  
+  redirect('/')
+end
 
 # begin open id authentication
 get '/submit_open_id' do  
