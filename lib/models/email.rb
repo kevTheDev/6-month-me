@@ -25,6 +25,17 @@ class Email < ActiveRecord::Base
   end
 
   def deliver
+    
+    # send the email
+    body = "Do you remember this? It's a letter from your past self"
+    body += "\n\n"
+    body += content
+    body += "\n\n"
+    body += "Did things work out as expected? If so well done! If not, don't worry, try again."
+    body += "\n\n"
+    body += "It's not too late to stay on track."
+    body += "Send another letter at sixmonthletter.com"
+    
     Pony.mail(:to => address, :from => 'noreply@sixmonthsme.com', :subject => 'A Letter From Your Past', :body => content)
     update_attribute(:sent_at, DateTime.now)
   end
