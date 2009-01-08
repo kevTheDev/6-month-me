@@ -134,12 +134,10 @@ end
 
 # regular authentication
 post '/authenticate' do
-  LOGGER.info "authenticate with: #{params.to_yaml}"
-  
   user = User.authenticate(params[:email], params[:password])
   if user
     signin(user)
-    redirect('/')
+    redirect('/new_email')
     return
   else
     haml :signin
