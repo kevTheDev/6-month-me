@@ -25,7 +25,7 @@ include Sinatra::Authorization
 enable :sessions
 
 before do
-  require_administrative_privileges
+  #require_administrative_privileges
 end
 
 helpers do
