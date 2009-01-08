@@ -9,5 +9,15 @@
     %label
       Your OpenID
     %input{:type => "text", :name => "open_id_input", :class => "openid"}
-    %button{:type => "button"}
-      Submit
+    %input{:type => "submit", :value => "submit"}
+      
+      
+  %form{:action => '/authenticate', :method => "POST"}
+    %label
+      Your Email
+    %input{:type => 'text', :name => 'email'}
+    %br
+    %label
+      Your Password
+    %input{:type => 'password', :name => 'password'}
+    %input{:type => "submit", :value => "submit"}

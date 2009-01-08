@@ -14,7 +14,7 @@ require 'lib/models/user'
 require 'lib/models/email'
 
 require 'pony'
-require 'session_helper'
+require 'lib/session_helper'
 require 'lib/authentication'
 
 include ActiveRecord
@@ -130,6 +130,20 @@ post '/create_user' do
   LOGGER.info "Errors: #{user.errors.to_yaml}"
   
   redirect('/')
+end
+
+# regular authentication
+post '/authenticate' do
+  LOGGER.info "authenticate with: #{params.to_yaml}"
+  
+  user = User.authenticate(params[:email], params[:password])
+  if user
+    signin(user)
+    redirect('/')
+    return
+  else
+    haml :signin
+  end
 end
 
 # begin open id authentication

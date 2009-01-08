@@ -45,8 +45,8 @@ class User < ActiveRecord::Base
 
   # Authenticate a user based upon an e-mail and password
   # Return the user record if successful, otherwise nil
-  def self.authenticate(username_or_email, pass)
-    current_user = User.find_by_email(:first)
+  def self.authenticate(email, pass)
+    current_user = User.find_by_email(email)
     return nil if current_user.nil? || User.encrypt(pass, current_user.salt) != current_user.hashed_password
     current_user
   end  
