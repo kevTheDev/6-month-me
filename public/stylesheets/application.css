@@ -24,6 +24,11 @@ body {
   position: relative;
 }
 
+.reasons_to_use {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
 input.openid
 {
    background: url(/images/openid_small_logo.png) no-repeat;
