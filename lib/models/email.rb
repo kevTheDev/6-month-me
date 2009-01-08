@@ -33,10 +33,10 @@ class Email < ActiveRecord::Base
     body += "\n\n"
     body += "Did things work out as expected? If so well done! If not, don't worry, try again."
     body += "\n\n"
-    body += "It's not too late to stay on track."
+    body += "It's not too late to stay on track. "
     body += "Send another letter at sixmonthletter.com"
     
-    Pony.mail(:to => address, :from => 'noreply@sixmonthsme.com', :subject => 'A Letter From Your Past', :body => content)
+    Pony.mail(:to => address, :from => 'noreply@sixmonthsme.com', :subject => 'A Letter From Your Past', :body => body)
     update_attribute(:sent_at, DateTime.now)
   end
 
