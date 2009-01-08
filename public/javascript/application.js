@@ -11,7 +11,7 @@ function displayOpenIdSignUp() {
   openIdSignInForm +=      "<input type='submit' value='submit' />"
   openIdSignInForm +=    "</form>"
   openIdSignInForm +=    "<a href='#' onclick='displayRegularSignUp()'>"
-  openIdSignInForm +=    "  Regular Sign In"
+  openIdSignInForm +=    "Use username/password"
   openIdSignInForm +=    "</a>"
   openIdSignInForm +=  "</div>"
 	
@@ -36,7 +36,7 @@ function displayRegularSignUp() {
   regularSignInForm +=     "<input type='submit' value='submit' />"
   regularSignInForm +=   "</form>"
   regularSignInForm +=   "<a href='#' onclick='displayOpenIdSignUp()'>"
-  regularSignInForm +=   "  Sign In With Open ID"
+  regularSignInForm +=   "Use OpenID"
   regularSignInForm +=   "</a>"
   regularSignInForm += "</div>"
 	
