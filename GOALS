@@ -9,13 +9,14 @@ You can view, edit and cancel reminders that have not yet been sent
 
 Next logical steps
 
+Fix problem that stopped Ben signing in with OpenID
+Improve Logging
 really answer the question as to why people would use the application
-
-link to seth godin post
 
 do example letter could even be the joel on software post goals
 
 allow the user to create the email before signing in
+
 demo video
 screenshots
 
@@ -23,7 +24,6 @@ iPhone App?
 android app?
 
 post to steve pavlina forums
-post to hacker news forums
 
 
 hide whois information - apparently this cannot be done???
